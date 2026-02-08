@@ -1,0 +1,154 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.7;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #1e3a8a, #020617);
+  position: relative;
+}
+
+.subtitle {
+  color: #93c5fd;
+  margin-top: 12px;
+}
+
+.contact {
+  margin-top: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* BUTTONS */
+.hero-actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+}
+
+.download-btn, .toggle-btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.download-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.toggle-btn {
+  background: transparent;
+  color: #93c5fd;
+  border: 1px solid #93c5fd;
+}
+
+.mode-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #020617;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 50%;
+}
+
+/* CONTENT */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.card {
+  background: #020617;
+  padding: 34px;
+  border-radius: 18px;
+  margin-bottom: 34px;
+  transform: translateY(40px);
+  opacity: 0;
+  transition: all 0.8s ease;
+}
+
+.card.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.card h2 {
+  color: #60a5fa;
+  margin-bottom: 18px;
+}
+
+.timeline-item {
+  margin-bottom: 28px;
+}
+
+.date {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+/* SKILLS GRID */
+.skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+}
+
+/* LIGHT MODE */
+body.light {
+  background: #f8fafc;
+  color: #020617;
+}
+
+body.light .card {
+  background: white;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    padding: 70px 15px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 30px 15px;
+  }
+}
+
+/* PRINT */
+@media print {
+  section, .card, .timeline-item {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body {
+    background: white;
+    color: black;
+  }
+
+  .mode-btn, footer {
+    display: none;
+  }
+}
