@@ -136,19 +136,108 @@ body.light .card {
   }
 }
 
-/* PRINT */
 @media print {
-  section, .card, .timeline-item {
+
+  /* ===== PAGE CONTROL ===== */
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-size: 10.2px;     /* tuned for 2 pages */
+    line-height: 1.32;
+  }
+
+  /* ===== HIDE UI ELEMENTS ===== */
+  .hero-actions,
+  .mode-btn,
+  footer {
+    display: none !important;
+  }
+
+  /* ===== HEADER ===== */
+  .hero {
+    padding: 0 0 8px 0;
+    background: none !important;
+    color: black !important;
+  }
+
+  h1 {
+    font-size: 19px;
+    margin-bottom: 3px;
+  }
+
+  .subtitle {
+    font-size: 10.8px;
+    margin-bottom: 5px;
+    color: black;
+  }
+
+  .contact span {
+    font-size: 9.8px;
+    display: inline-block;
+    margin-right: 8px;
+    white-space: nowrap;
+  }
+
+  /* ===== CONTENT ===== */
+  .container {
+    padding: 0;
+    margin: 0;
+  }
+
+  .card {
+    background: none !important;
+    border: none !important;
+    padding: 5px 0;
+    margin-bottom: 7px;
+  }
+
+  h2 {
+    font-size: 12.8px;
+    margin-bottom: 3px;
+    padding-bottom: 2px;
+    border-bottom: 1px solid #ccc;
+  }
+
+  h3 {
+    font-size: 11px;
+    margin-bottom: 1px;
+  }
+
+  .date {
+    font-size: 9.5px;
+    margin-bottom: 3px;
+  }
+
+  ul {
+    margin-left: 14px;
+  }
+
+  li {
+    margin-bottom: 2.5px;
+  }
+
+  /* ===== PAGE BREAK CONTROL ===== */
+  section,
+  .card,
+  .timeline-item {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  body {
-    background: white;
-    color: black;
+  /* Force experience to stay compact */
+  .timeline-item {
+    margin-bottom: 10px;
   }
 
-  .mode-btn, footer {
-    display: none;
+  a {
+    color: black;
+    text-decoration: none;
   }
 }
+
+
